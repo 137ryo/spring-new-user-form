@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ユーザー新規登録</title>
+</head>
+<body>
+<div class="container">
+<p>a</p>
+
+<div th:each="item : ${zipcodeList}" th:object="${item}">
+	<p th:text="*{zipcode}">
+	<p th:text="*{prefcode}">
+	<p th:text="*{address1}">
+	<p th:text="*{address2}">
+	<p th:text="*{address3}">
+	<p th:text="*{kana1}">
+	<p th:text="*{kana2}">
+	<p th:text="*{kana3}">
+</div>
+</div>
+</body>
+</html>
