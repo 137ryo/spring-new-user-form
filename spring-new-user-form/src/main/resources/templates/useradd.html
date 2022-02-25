@@ -14,66 +14,93 @@
 
 			<label>姓：<span class="text-danger">※</span></label>
 			<input type="text" name="firstName" maxlength="10" class="form-control">
-
 			<label>名：<span class="text-danger">※</span></label>
 			<input type="text" name="lastName" maxlength="10" class="form-control">
 
+			<br/>
+
 			<label>姓 (セイ)：<span class="text-danger">※</span></label>
 			<input type="text" name="firstKanaName" maxlength="20" class="form-control">
-
 			<label>名 (メイ)：<span class="text-danger">※</span></label>
 			<input type="text" name="lastKanaName" maxlength="20" class="form-control">
 
+			<br/>
+
 			<!-- 性別 -->
-			<label>男性：<span class="text-danger">※</span></label>
-			<input type="radio" name="mele" class="form-control">
+			<div>
+				<label>性別：<span class="text-danger">※</span></label>
+				<br/>
+				<label>男性</label>
+				<input type="radio" name="gender" id="male" class="form-control">
+				<label>女性</label>
+				<input type="radio" name="gender" id="female" class="form-control">
+				<label>未選択</label>
+				<input type="radio" name="gender"  id="unselect" class="form-control" checked>
+			</div>
 
-			<label>女性：<span class="text-danger">※</span></label>
-			<input type="radio" name="female" class="form-control">
-
-			<label>未選択：<span class="text-danger">※</span></label>
-			<input type="radio" name="unselect" maxlength="7" class="form-control">
+			<br/>
 
 			<!--  生年月日 -->
-			<label>年：<span class="text-danger">※</span></label>
-			<input type="text" name="year" maxlength="7" class="form-control">
+			<div>
+				<label>生年月日：<span class="text-danger">※</span></label>
+				<label>年</label>
+				<input type="text" name="year" maxlength="4" class="form-control">
+				<label>月</label>
+				<input type="text" name="month" maxlength="2" class="form-control">
+				<label>日</label>
+				<input type="text" name="day" maxlength="2" class="form-control">
+			</div>
 
-			<label>月：<span class="text-danger">※</span></label>
-			<input type="text" name="month" maxlength="7" class="form-control">
-
-			<label>日：<span class="text-danger">※</span></label>
-			<input type="text" name="day" maxlength="7" class="form-control">
+			<br/>
 
 			<label>メールアドレス：<span class="text-danger">※</span></label>
-			<input type="text" name="email" maxlength="7" class="form-control">
+			<input type="text" name="email" maxlength="100" class="form-control">
+
+			<br/>
 
 			<label>電話番号：<span class="text-danger">※</span></label>
-			<input type="text" name="phone" maxlength="7" class="form-control">
+			<input type="text" name="phone" maxlength="14" class="form-control">
+
+			<br/>
 
 			<label>郵便番号：<span class="text-danger">※</span></label>
 			<input type="text" name="zipcode" maxlength="7" class="form-control">
+			<input type="button" name="" class="form-control" value="住所自動入力">
+
+			<br/>
 
 			<label>都道府県：<span class="text-danger">※</span></label>
-			<input type="text" name="prefectures" maxlength="7" class="form-control">
+			<input type="text" name="prefectures" maxlength="4" class="form-control">
+
+			<br/>
 
 			<label>市区町村：<span class="text-danger">※</span></label>
-			<input type="text" name="city" maxlength="7" class="form-control">
+			<input type="text" name="city" maxlength="10" class="form-control">
+
+			<br/>
 
 			<label>地域名：<span class="text-danger">※</span></label>
-			<input type="text" name="region" maxlength="7" class="form-control">
+			<input type="text" name="region" maxlength="10" class="form-control">
+
+			<br/>
 
 			<label>番地：<span class="text-danger">※</span></label>
-			<input type="text" name="address1" maxlength="7" class="form-control">
+			<input type="text" name="address1" maxlength="20" class="form-control">
+
+			<br/>
 
 			<label>建物名・部屋番号：<span class="text-danger">※</span></label>
-			<input type="text" name="address2" maxlength="7" class="form-control">
+			<input type="text" name="address2" maxlength="30" class="form-control">
+
+			<br/>
 
 			<label>メールマガジン：<span class="text-danger">※</span></label>
-			<input type="checkbox" name="magazin" maxlength="7" class="form-control">
+			<input type="checkbox" name="magazin" class="form-control">
+
+			<br/>
 
 			<label>利用規約：<span class="text-danger">※</span></label>
-			<input type="checkbox" name="agreeTeam" maxlength="7" class="form-control">
-
+			<input type="checkbox" name="agreeTeam" class="form-control">
 
 
 		    <br/>
