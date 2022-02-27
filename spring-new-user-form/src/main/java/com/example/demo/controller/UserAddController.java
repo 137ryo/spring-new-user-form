@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.dto.ZipCodeDto;
-import com.example.demo.request.UserAddRequest;
+import com.example.demo.request.ZipCodeRequest;
 import com.example.demo.service.ZipCodeService;
 
 @Controller
@@ -36,11 +36,20 @@ public class UserAddController {
     }
 
     /**
-     * 郵便番号情報表示
+     * 利用規約
+     * @return "agree-team"
+     */
+    @RequestMapping(value = "/agreeteam")
+    public String agreeTeamPage(HttpSession session, Model model) {
+        return "agree-team";
+    }
+
+    /**
+     * 郵便番号から住所を取得する
      * @return "zipcode"
      */
     @RequestMapping(value="/useradd/zipcode", method=RequestMethod.POST)
-    public String zipcodeConfirm(@Validated @ModelAttribute UserAddRequest userAddRequest,
+    public String zipcodeConfirm(@Validated @ModelAttribute ZipCodeRequest zipCodeRequest,
     		BindingResult result, Model model, @RequestParam("zipcode") String zipcode){
 
     	if (result.hasErrors()) {
@@ -62,7 +71,37 @@ public class UserAddController {
         // thymeleafでリストを展開して表示する
         model.addAttribute("zipcodeList", zipCodeDto.getResults());
 
-        return "zipcode";
+        return "useradd";
     }
+
+//    /**
+//     * 郵便番号情報表示
+//     * @return "zipcode"
+//     */
+//    @RequestMapping(value="/useradd/zipcode", method=RequestMethod.POST)
+//    public String zipcodeConfirm(@Validated @ModelAttribute UserAddRequest userAddRequest,
+//    		BindingResult result, Model model, @RequestParam("zipcode") String zipcode){
+//
+//    	if (result.hasErrors()) {
+//
+//			// 入力チェックエラーの場合
+//			List<String> errorList = new ArrayList<String>();
+//
+//			for (ObjectError error : result.getAllErrors()) {
+//				errorList.add(error.getDefaultMessage());
+//			}
+//			model.addAttribute("validationError", errorList);
+//
+//			return "useradd";
+//		}
+//
+//        // 郵便番号検索APIサービス呼び出し
+//        ZipCodeDto zipCodeDto = zpcService.service(zipcode);
+//
+//        // thymeleafでリストを展開して表示する
+//        model.addAttribute("zipcodeList", zipCodeDto.getResults());
+//
+//        return "zipcode";
+//    }
 
 }

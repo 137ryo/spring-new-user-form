@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <script src="../static/js/required.js"></script>
+    <script src="static/js/required.js"></script>
     <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
-    <title>ユーザー新規登録</title>
+    <title>利用規約</title>
 </head>
 
 <style>
@@ -15,8 +15,8 @@ h1 {
   font-size: 12px;
 }
 #wrapContents {
-  width: 680px;
-  height: 300px;
+  width: 700px;
+  height: 500px;
   margin: 0 auto;
   padding: 0.5em;
   overflow-y: scroll;
@@ -25,127 +25,9 @@ h1 {
   font-size: 12px;
 }
 </style>
-
 <body>
 <div class="container">
-    <h1>ユーザー新規登録</h1>
-    <div th:if="${validationError}" th:each="error : ${validationError}">
-		<label class="text-danger" th:text="${error}"></label>
-	</div>
-	    <form action="?" th:method="post">
-
-			<label>姓：<span class="text-danger">※</span></label>
-			<input type="text" name="firstName" maxlength="10" class="form-control">
-			<label>名：<span class="text-danger">※</span></label>
-			<input type="text" name="lastName" maxlength="10" class="form-control">
-
-			<br/>
-
-			<label>姓 (セイ)：<span class="text-danger">※</span></label>
-			<input type="text" name="firstKanaName" maxlength="20" class="form-control">
-			<label>名 (メイ)：<span class="text-danger">※</span></label>
-			<input type="text" name="lastKanaName" maxlength="20" class="form-control">
-
-			<br/>
-
-			<!-- 性別 -->
-			<div>
-				<label>性別：<span class="text-danger">※</span></label>
-				<br/>
-				<label>男性</label>
-				<input type="radio" name="gender" id="male" class="form-control">
-				<label>女性</label>
-				<input type="radio" name="gender" id="female" class="form-control">
-				<label>未選択</label>
-				<input type="radio" name="gender"  id="unselect" class="form-control" checked>
-			</div>
-
-			<br/>
-
-			<!--  生年月日 -->
-			<div>
-				<label>生年月日：<span class="text-danger">※</span></label>
-				<label>年</label>
-				<input type="text" name="year" maxlength="4" class="form-control">
-				<label>月</label>
-				<input type="text" name="month" maxlength="2" class="form-control">
-				<label>日</label>
-				<input type="text" name="day" maxlength="2" class="form-control">
-			</div>
-
-			<br/>
-
-			<label>メールアドレス：<span class="text-danger">※</span></label>
-			<input type="text" name="email" maxlength="100" class="form-control">
-
-			<br/>
-
-			<label>電話番号：<span class="text-danger">※</span></label>
-			<input type="text" name="phone" maxlength="14" class="form-control">
-
-			<br/>
-
-			<label>郵便番号：<span class="text-danger">※</span></label>
-			<input type="text" name="zipcode" maxlength="7" class="form-control">
-
-			<div class="text-center">
-				<input type="submit" name="getAddress" value="　住所自動入力　" class="btn btn-primary"
-				formaction="/useradd/zipcode">
-			</div>
-
-			<!-- 郵便番号自動入力 Sample -->
-			<div th:if="${zipcodeList}">
-				<div th:each="item : ${zipcodeList}" th:object="${item}">
-					<input type="text" th:value="*{zipcode}">
-					<input type="text" th:value="*{prefcode}">
-					<input type="text" th:value="*{address1}">
-					<input type="text" th:value="*{address2}">
-					<input type="text" th:value="*{address3}" name="add">
-				</div>
-			</div>
-			<div th:unless="${zipcodeList}">
-				<input type="text">
-				<input type="text">
-				<input type="text">
-				<input type="text">
-				<input type="text" name="add">
-			</div>
-
-			<br/>
-
-			<label>都道府県：<span class="text-danger">※</span></label>
-			<input type="text" name="prefectures" maxlength="4" class="form-control">
-
-			<br/>
-
-			<label>市区町村：<span class="text-danger">※</span></label>
-			<input type="text" name="city" maxlength="10" class="form-control">
-
-			<br/>
-
-			<label>地域名：<span class="text-danger">※</span></label>
-			<input type="text" name="region" maxlength="10" class="form-control">
-
-			<br/>
-
-			<label>番地：<span class="text-danger">※</span></label>
-			<input type="text" name="address1" maxlength="20" class="form-control">
-
-			<br/>
-
-			<label>建物名・部屋番号：<span class="text-danger">※</span></label>
-			<input type="text" name="address2" maxlength="30" class="form-control">
-
-			<br/>
-
-			<label>メールマガジン：<span class="text-danger">※</span></label>
-			<input type="checkbox" name="magazin" class="form-control">
-
-			<br/>
-
-
-
-			<div id="wrapContents">
+<div id="wrapContents">
 <h1>利用規約</h1>
 <p>この利用規約（以下，「本規約」といいます。）は，＿＿＿＿＿（以下，「当社」といいます。）がこのウェブサイト上で提供するサービス（以下，「本サービス」といいます。）の利用条件を定めるものです。登録ユーザーの皆さま（以下，「ユーザー」といいます。）には，本規約に従って，本サービスをご利用いただきます。</p>
 
@@ -271,18 +153,6 @@ h1 {
 <div id="end"></div>
 </div>
 
-
-
-			<label>利用規約：<span class="text-danger">※</span></label>
-			<input type="checkbox" name="agreeTeam" class="form-control">
-
-		    <br/>
-
-		    <div class="text-center">
-				<input type="submit" value="　登録　" class="btn btn-primary" formaction="/useradd/zipcode">
-			</div>
-
-	</form>
 </div>
 </body>
 </html>
