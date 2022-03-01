@@ -12,10 +12,42 @@ import lombok.Data;
 @Data
 public class UserAddRequest implements Serializable {
 
-	/** ユーザID */
-	@NotEmpty(message = "ユーザIDを入力してください")
-	@Pattern(regexp = "^[a-z0-9_-]{4,16}$", message = "ユーザIDは4文字以上16文字以下で入力してください")
-	private String userId;
+	/** 苗字 */
+	@NotEmpty(message = "苗字を入力してください")
+	private String firstName;
+
+	/** 名前 */
+	@NotEmpty(message = "名前を入力してください")
+	private String lastName;
+
+	/** 苗字(カナ) */
+	@NotEmpty(message = "苗字(カナ)を入力してください")
+	private String firstKanaName;
+
+	/** 名前(カナ) */
+	@NotEmpty(message = "名前(カナ)を入力してください")
+	private String lastKanaName;
+
+	/** 性別 */
+	private int gender;
+
+	/** 生年月日(年) */
+	@NotEmpty(message = "生年月日(年)を入力してください")
+	private int year;
+
+	/** 生年月日(月) */
+	@NotEmpty(message = "生年月日(月)を入力してください")
+	private int month;
+
+	/** 生年月日(日) */
+	@NotEmpty(message = "生年月日(日)を入力してください")
+	private int day;
+
+	/** メールアドレス */
+	@NotEmpty(message = "メールアドレスを入力してください")
+	@Pattern(regexp = "^[a-zA-Z0-9_.+-]+@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\\.)+[a-zA-Z]{2,}$",
+	message = "メールアドレスの形式で入力してください")
+	private String email;
 
 	/** ユーザ名 */
 	@NotEmpty(message = "ユーザ名を入力してください")
@@ -39,14 +71,6 @@ public class UserAddRequest implements Serializable {
 		}
 		return false;
 	}
-
-	private String name;
-
-	/** メールアドレス */
-	@NotEmpty(message = "メールアドレスを入力してください")
-	@Pattern(regexp = "^[a-zA-Z0-9_.+-]+@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\\.)+[a-zA-Z]{2,}$",
-	message = "メールアドレスの形式で入力してください")
-	private String email;
 
 	/** 電話番号 */
 	@NotEmpty(message = "電話番号を入力してください")
