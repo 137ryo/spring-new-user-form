@@ -82,5 +82,24 @@ public class UserAddRequest implements Serializable {
 	@Pattern(regexp = "^[0-9]{7}$", message = "郵便番号の形式が正しくありません。ハイフンは入力しないでください。")
 	private String zipcode;
 
+	/** 都道府県 */
+	private String prefectures;
 
+	/** 市区町村 */
+	private String city;
+
+	/** 地域名 */
+	private String region;
+
+	/** 番地 */
+	private String address1;
+
+	/** 建物名・部屋番号 */
+	private String address2;
+
+	/** メールマガジン */
+	private int magazin;
+
+	/** 利用規約 */
+	private int agreeTeam;
 }
