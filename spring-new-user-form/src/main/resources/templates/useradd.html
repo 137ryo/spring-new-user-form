@@ -90,7 +90,7 @@ h1 {
 
 			<br/>
 
-			<label>パスワード：<span class="text-danger">※</span></label>
+			<label>パスワード(確認)：<span class="text-danger">※</span></label>
 			<input type="password" name="password-confirm" maxlength="20" class="form-control">
 
 			<br/>
@@ -111,54 +111,40 @@ h1 {
 			<!-- 郵便番号自動入力 Sample -->
 			<div th:if="${zipcodeList}">
 				<div th:each="item : ${zipcodeList}" th:object="${item}">
-					<input type="text" th:value="*{zipcode}">
-					<input type="text" th:value="*{prefcode}">
-					<input type="text" th:value="*{address1}">
-					<input type="text" th:value="*{address2}">
-					<input type="text" th:value="*{address3}" name="add">
+					<label>都道府県：<span class="text-danger">※</span></label>
+					<input type="text" name="prefectures" maxlength="4" class="form-control" th:value="*{address1}">
+					<br/>
+					<label>市区町村：<span class="text-danger">※</span></label>
+					<input type="text" name="city" maxlength="10" class="form-control" th:value="*{address2}">
+					<br/>
+					<label>地域名：<span class="text-danger">※</span></label>
+					<input type="text" name="region" maxlength="10" class="form-control" th:value="*{address3}">
 				</div>
 			</div>
 			<div th:unless="${zipcodeList}">
-				<input type="text">
-				<input type="text">
-				<input type="text">
-				<input type="text">
-				<input type="text" name="add">
+				<label>都道府県：<span class="text-danger">※</span></label>
+				<input type="text" name="prefectures" maxlength="4" class="form-control">
+				<br/>
+				<label>市区町村：<span class="text-danger">※</span></label>
+				<input type="text" name="city" maxlength="10" class="form-control">
+				<br/>
+				<label>地域名：<span class="text-danger">※</span></label>
+				<input type="text" name="region" maxlength="10" class="form-control">
 			</div>
-
-			<br/>
-
-			<label>都道府県：<span class="text-danger">※</span></label>
-			<input type="text" name="prefectures" maxlength="4" class="form-control">
-
-			<br/>
-
-			<label>市区町村：<span class="text-danger">※</span></label>
-			<input type="text" name="city" maxlength="10" class="form-control">
-
-			<br/>
-
-			<label>地域名：<span class="text-danger">※</span></label>
-			<input type="text" name="region" maxlength="10" class="form-control">
-
-			<br/>
-
 			<label>番地：<span class="text-danger">※</span></label>
 			<input type="text" name="address1" maxlength="20" class="form-control">
 
 			<br/>
 
-			<label>建物名・部屋番号：<span class="text-danger">※</span></label>
+			<label>建物名・部屋番号：</label>
 			<input type="text" name="address2" maxlength="30" class="form-control">
 
 			<br/>
 
-			<label>メールマガジン：<span class="text-danger">※</span></label>
+			<label>メールマガジンを受け取る</label>
 			<input type="checkbox" name="magazin" class="form-control">
 
 			<br/>
-
-
 
 			<div id="wrapContents">
 <h1>利用規約</h1>
@@ -285,8 +271,6 @@ h1 {
 <p class="tR">以上</p>
 <div id="end"></div>
 </div>
-
-
 
 			<label>利用規約：<span class="text-danger">※</span></label>
 			<input type="checkbox" name="agreeTeam" class="form-control">

@@ -83,23 +83,29 @@ public class UserAddRequest implements Serializable {
 	private String zipcode;
 
 	/** 都道府県 */
+	@NotEmpty(message = "都道府県を入力してください")
 	private String prefectures;
 
 	/** 市区町村 */
+	@NotEmpty(message = "市区町村を入力してください")
 	private String city;
 
 	/** 地域名 */
+	@NotEmpty(message = "地域名を入力してください")
 	private String region;
 
 	/** 番地 */
+	@NotEmpty(message = "番地を入力してください")
 	private String address1;
 
 	/** 建物名・部屋番号 */
+	@NotEmpty(message = "建物名・部屋番号を入力してください")
 	private String address2;
 
 	/** メールマガジン */
 	private int magazin;
 
 	/** 利用規約 */
+	@NotEmpty(message = "利用規約を確認してください")
 	private int agreeTeam;
 }
