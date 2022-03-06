@@ -5,6 +5,7 @@
     <script src="../static/js/required.js"></script>
     <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
     <title>ユーザー新規登録</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
 <style>
@@ -34,8 +35,10 @@ h1 {
 	</div>
 	    <form action="?" th:method="post">
 
-			<label>姓：<span class="text-danger">※</span></label>
-			<input type="text" name="firstName" maxlength="10" class="form-control">
+			<label>姓：<span class="text-danger" >※</span></label>
+			<input type="text" th:field="firstName" maxlength="10" class="form-control"
+			th:classappend="${#fields.hasErrors('firstName')}?'is-invalid'">
+
 			<label>名：<span class="text-danger">※</span></label>
 			<input type="text" name="lastName" maxlength="10" class="form-control">
 
@@ -278,7 +281,7 @@ h1 {
 		    <br/>
 
 		    <div class="text-center">
-				<input type="submit" value="　登録　" class="btn btn-primary" formaction="/useradd/zipcode">
+				<input type="submit" value="　登録　" class="btn btn-primary" formaction="/useradd/userlist">
 			</div>
 
 	</form>

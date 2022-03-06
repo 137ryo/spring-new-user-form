@@ -29,19 +29,19 @@ public class UserAddRequest implements Serializable {
 	private String lastKanaName;
 
 	/** 性別 */
-	private int gender;
+	private String gender;
 
 	/** 生年月日(年) */
 	@NotEmpty(message = "生年月日(年)を入力してください")
-	private int year;
+	private String year;
 
 	/** 生年月日(月) */
 	@NotEmpty(message = "生年月日(月)を入力してください")
-	private int month;
+	private String month;
 
 	/** 生年月日(日) */
 	@NotEmpty(message = "生年月日(日)を入力してください")
-	private int day;
+	private String day;
 
 	/** メールアドレス */
 	@NotEmpty(message = "メールアドレスを入力してください")
@@ -103,9 +103,8 @@ public class UserAddRequest implements Serializable {
 	private String address2;
 
 	/** メールマガジン */
-	private int magazin;
+	private String magazin;
 
 	/** 利用規約 */
-	@NotEmpty(message = "利用規約を確認してください")
-	private int agreeTeam;
+	private String agreeTeam;
 }
