@@ -28,12 +28,21 @@ public class UserAddController {
     ZipCodeService zpcService;
 
     /**
-     * 郵便番号入力フォーム
+     * ユーザー新規登録フォーム
      * @return "useradd"
      */
     @RequestMapping(value = "/useradd")
-    public String zipcodeForm(HttpSession session, Model model) {
+    public String useraddView(HttpSession session, Model model) {
         return "useradd";
+    }
+    
+    /**
+     * ユーザ一覧
+     * @return "userlist"
+     */
+    @RequestMapping(value = "/userlist")
+    public String userlistView(HttpSession session, Model model) {
+        return "userlist";
     }
 
     /**
