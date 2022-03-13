@@ -1,5 +1,7 @@
 package com.example.demo.entity;
 
+import java.util.Date;
+
 import lombok.Data;
 
 @Data
@@ -18,13 +20,21 @@ public class User {
 	private String lastKanaName;
 
 	/** 性別 */
-	private Number gender;
+	private String gender;
 
 	/** 生年月日 */
-	private Number birthday;
+	private String year;
+	private String month;
+	private String day;
 
 	/** メールアドレス */
 	private String email;
+
+	/** ユーザー名 */
+	private String username;
+
+	/** パスワード */
+	private String password;
 
 	/** 電話番号 */
 	private String phone;
@@ -51,8 +61,14 @@ public class User {
 	private String address2;
 
 	/** メールマガジン */
-	private Number magazin;
+	private String magazin;
 
 	/** 利用規約 */
-	private Number agreeTeams;
+	private String agreeTeams;
+
+	/** 作成日時 */
+	private Date createDate;
+
+	/** 更新日時 */
+	private Date updateDate;
 }
